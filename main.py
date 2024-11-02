@@ -2,7 +2,6 @@ import streamlit as st
 from langchain_core.messages.chat import ChatMessage
 from dotenv import load_dotenv
 from assistant_builder import setup_openai_assistant, setup_anthropic_assistant
-from langchain_teddynote.models import AnthropicPDFAssistant
 import os
 
 # API KEY 정보로드
@@ -39,7 +38,7 @@ with st.sidebar:
 
     # 모델 선택 메뉴
     selected_model = st.selectbox(
-        "Provider 선택", ["OpenAI Assistant V2", "Anthropic PDF"], index=0
+        "Provider 선택", ["Anthropic PDF", "OpenAI Assistant V2"], index=0
     )
 
     system_prompt = st.text_area(
@@ -171,7 +170,7 @@ if user_input:
                         token_usage.append(token["content"])
                     container.markdown(ai_answer)
 
-            if show_token:
+            if show_token and mode == "anthropic":
                 token_usage_str = "**토큰 사용량**\n\n"
 
                 for usage in token_usage:
