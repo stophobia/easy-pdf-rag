@@ -30,8 +30,10 @@ if "assistant" not in st.session_state:
 
 # 사이드바 생성
 with st.sidebar:
+    st.markdown("made by [테디노트](https://www.youtube.com/c/teddynote) 🙌")
+
     # 초기화 버튼 생성
-    clear_btn = st.button("대화 초기화", type="primary")
+    clear_btn = st.button("대화 초기화", type="primary", use_container_width=True)
 
     # 파일 업로드
     uploaded_file = st.file_uploader("파일 업로드", type=["pdf"])
@@ -171,7 +173,7 @@ if user_input:
                     container.markdown(ai_answer)
 
             if show_token and mode == "anthropic":
-                token_usage_str = "**토큰 사용량**\n\n"
+                token_usage_str = "\n\n**토큰 사용량**\n\n"
 
                 for usage in token_usage:
                     # BetaUsage 객체인 경우
