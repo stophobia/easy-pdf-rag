@@ -2,7 +2,7 @@
 
 OpenAI Assistant V2 와 Anthropic 의 PDF 기능을 기반으로 RAG 기능을 구현한 예제입니다.
 
-- made by[테디노트](https://www.youtube.com/c/teddynote)
+- made by [테디노트](https://www.youtube.com/c/teddynote)
 
 > Anthropic PDF 기능 예시
 
